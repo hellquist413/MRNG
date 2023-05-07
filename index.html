@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microphone Input with Volume Bar</title>
+    <style>
+        body {
+            font-family: monospace, 'Courier New', Courier;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom right, #6dc5c7, #73b1c1, #788dad);
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 4rem;
+        }
+
+        .container {
+            max-width: 600px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 100px;
+            background-color: #788dad;
+            color: white;
+            border-radius: 2%;
+            border: 10px solid #9bb1d2;
+            box-shadow: 0 0 100rem rgba(0, 0, 0, 0.5);
+            /* add a big drop shadow */
+        }
+
+
+        span {
+            color: #000000 !important;
+            font-weight: bolder;
+            font-size: 1.175rem;
+        }
+
+        #random-number {
+            font-size: 5rem !important;
+        }
+
+
+        #volume-meter {
+            width: 100%;
+            height: 10px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #6dc5c7;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        #volume-meter::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 1px solid #6dc5c7;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #volume-meter::-moz-range-thumb {
+            width: 0px;
+            height: 0px;
+            background-color: white;
+            border: 0px solid #6dc5c7;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #volume-meter::-webkit-slider-thumb:hover,
+        #volume-meter::-moz-range-thumb:hover {
+            background-color: #6dc5c7;
+        }
+
+        #volume-meter::-webkit-slider-thumb:active,
+        #volume-meter::-moz-range-thumb:active {
+            transform: scale(1.2);
+        }
+
+        #volume-meter::-webkit-slider-runnable-track {
+            background: linear-gradient(90deg, #6dc5c7 0%, #6dc5c7 var(--volume-percent), #FFFFFF var(--volume-percent));
+        }
+
+        #volume-meter::-moz-range-track {
+            background: linear-gradient(90deg, #6dc5c7 0%, #6dc5c7 var(--volume-percent), #FFFFFF var(--volume-percent));
+        }
+
+
+
+        #copy-random-number {
+            background-color: #9bb1d2;
+            color: white;
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+        }
+
+        #copy-random-number:hover {
+            background-color: #6dc5c7;
+            color: #fff;
+        }
+
+        #copy-random-number:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        #gain-slider {
+            width: 100%;
+            height: 10px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #6dc5c7;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        #gain-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 1px solid #6dc5c7;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #gain-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 1px solid #6dc5c7;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #gain-slider::-webkit-slider-thumb:hover,
+        #gain-slider::-moz-range-thumb:hover {
+            background-color: #6dc5c7;
+        }
+
+        #gain-slider::-webkit-slider-thumb:active,
+        #gain-slider::-moz-range-thumb:active {
+            transform: scale(1.2);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Microphone Random Number Generator</h1>
+        <input id="volume-meter" type="range" min="0" max="1" step="0.01" value="0" readonly>
+        <p>Gain Value: <span id="gain-value">100</span></p>
+        <input id="gain-slider" type="range" min="0" max="500" step="1" value="2">
+
+        <p>Measured Gain Value: <span id="measured-gain-value">0</span></p>
+        <p>Random Number: <span id="random-number">0</span></p>
+        <button id="copy-random-number">Copy</button>
+        <script src="main.js"></script>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
