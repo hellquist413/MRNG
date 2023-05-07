@@ -159,6 +159,12 @@
         #gain-slider::-moz-range-thumb:active {
             transform: scale(1.2);
         }
+
+        .github-logo {
+            padding-top: 50px;
+            width: 30px;
+            height: 30px;
+        }
     </style>
 
 </head>
@@ -173,7 +179,12 @@
         <p>Measured Gain Value: <span id="measured-gain-value">0</span></p>
         <p>Random Number: <span id="random-number">0</span></p>
         <button id="copy-random-number">Copy</button>
-        <script src="main.js"></script>
+        <div class="github-link-container">
+            <a href="https://github.com/hellquist413/MRNG" target="_blank" rel="noopener noreferrer">
+                <img src="img/Octicons-mark-github.svg.png" alt="GitHub Logo" class="github-logo">
+            </a>
+        </div>
+
     </div>
     <script src="main.js"></script>
 </body>
